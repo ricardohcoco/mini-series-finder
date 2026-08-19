@@ -1,9 +1,17 @@
+import type { SearchResultType } from '../../types/SearchResultType'
+import SeriesCard from '../SeriesCard';
 import styles from './SeriesList.module.css'
 
-export default function MoviesList() {
+type SeriesListProps = {
+    shows: SearchResultType[];
+}
+
+export default function SeriesList({ shows }: SeriesListProps) {
     return (
-        <div className={styles.container}>
-            <h1>Olá Mundo!</h1>
-        </div>
+        <section className={styles.container}>
+            {shows.map((item) => (
+                <SeriesCard key={item.show.id} show={item.show} />
+            ))}
+        </section>
     )
 }

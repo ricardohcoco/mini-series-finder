@@ -1,75 +1,151 @@
-# React + TypeScript + Vite
+# 🎬 Mini Series Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida em React + TypeScript para busca e consulta de informações sobre séries utilizando a API do [TVMaze](https://www.tvmaze.com/api).
 
-Currently, two official plugins are available:
+O projeto foi desenvolvido com o objetivo de praticar e consolidar conceitos fundamentais do React, como `useState`, `useEffect`, props, rotas, consumo de APIs, `fetch`, `async/await` e tratamento de estados de carregamento e erro.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Funcionalidades
 
-## React Compiler
+- 🔎 Busca de séries por nome
+- 🎬 Exibição dos resultados em cards
+- ⭐ Exibição da avaliação das séries
+- 📄 Página com detalhes da série
+- 🎭 Exibição de gêneros e sinopse
+- 🖼️ Exibição da imagem da série
+- ↩️ Navegação entre páginas
+- ❌ Página 404 para rotas inexistentes
+- ⏳ Indicador de carregamento durante as requisições
+- ⚠️ Tratamento de erros da API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologias
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- React Router DOM
+- CSS Modules
+- React Icons
+- TVMaze API
+- Vite
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📚 Conceitos praticados
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Este projeto foi desenvolvido principalmente como exercício de fixação dos seguintes conceitos:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- `useState`
+- `useEffect`
+- Props
+- Componentização
+- React Router
+- `Link`
+- `useParams`
+- `useNavigate`
+- `Outlet`
+- `fetch`
+- Promises
+- `async/await`
+- `try/catch/finally`
+- Consumo de API
+- Tipagem de dados externos com TypeScript
+- Renderização de listas com `.map()`
+- Tratamento de valores `null`
+- Estados de loading e error
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🔌 API
 
-```
+Os dados das séries são obtidos através da [TVMaze API](https://www.tvmaze.com/api).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Busca de séries
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```text
+https://api.tvmaze.com/search/shows?q={nome}
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Detalhes de uma série
+https://api.tvmaze.com/shows/{id}
 
-```
+### Detalhes de uma série
+https://api.tvmaze.com/shows/{id}
+
+
+### 📂 Estrutura do projeto
+src/
+├── components/
+│   ├── Footer/
+│   ├── Header/
+│   ├── SearchBar/
+│   ├── SeriesCard/
+│   ├── SeriesList/
+│   └── Spinner/
+│
+├── pages/
+│   ├── HomePage/
+│   ├── Details/
+│   ├── NotFound/
+│   └── PageDefault/
+│
+├── services/
+│   ├── searchSeries.ts
+│   └── getSeriesDetails.ts
+│
+├── types/
+│   ├── serieType.ts
+│   ├── SearchResultType.ts
+│   └── DetailsSerieType.ts
+│
+├── routes.tsx
+└── main.tsx
+
+### 🧭 Rotas
+
+Rota	Página
+/	Página inicial e busca de séries
+/shows/:id	Detalhes da série
+*	Página não encontrada
+
+
+### ⚙️ Como executar o projeto
+
+Clone o repositório:
+
+git clone https://github.com/ricardohcoco/mini-series-finder
+
+Entre na pasta do projeto:
+
+cd mini-series-finder
+
+Instale as dependências:
+
+npm install
+
+Execute o projeto:
+
+npm run dev
+
+A aplicação estará disponível na URL informada pelo Vite no terminal.
+
+### 🎯 Objetivo do projeto
+
+O Mini Series Finder foi desenvolvido como um projeto de estudo para reforçar os fundamentos de desenvolvimento Front-End com React e TypeScript.
+
+A proposta foi manter a aplicação simples e objetiva, permitindo praticar o fluxo completo de uma aplicação que consome uma API:
+
+Usuário
+   ↓
+Busca por uma série
+   ↓
+React
+   ↓
+Fetch / Async Await
+   ↓
+TVMaze API
+   ↓
+Estado
+   ↓
+Lista de resultados
+   ↓
+Card da série
+   ↓
+Página de detalhes
+
+### 👨‍💻 Autor
+
+Ricardo Coco

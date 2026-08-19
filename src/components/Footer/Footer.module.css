@@ -1,0 +1,29 @@
+.footer {
+  width: 100%;
+  padding: 20px;
+  margin-top: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #222;
+  color: #fff;
+}
+
+.footer h2 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 16px 12px;
+  }
+
+  .footer h2 {
+    font-size: 0.8rem;
+  }
+}

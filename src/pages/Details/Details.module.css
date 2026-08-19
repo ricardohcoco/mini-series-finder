@@ -1,0 +1,151 @@
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #141414;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #262626;
+  color: #ffffff;
+  border: 1px solid #333333;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+  margin-bottom: 1.5rem;
+}
+
+.backButton:hover {
+  background-color: #e50914;
+  border-color: #e50914;
+  transform: translateX(-3px);
+}
+
+.backButton:active {
+  transform: translateX(-1px);
+}
+
+.container h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  border-bottom: 2px solid #e50914;
+  padding-bottom: 0.5rem;
+  display: block;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: auto auto 1fr;
+  gap: 1rem 2rem;
+  align-items: start;
+}
+
+.cover {
+  grid-row: 1 / span 3;
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.cover:hover {
+  transform: scale(1.02);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1f1f1f;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  width: fit-content;
+  font-size: 0.95rem;
+}
+
+.rating strong {
+  color: #b3b3b3;
+}
+
+.rating svg {
+  color: #f5c518;
+  font-size: 1.1rem;
+}
+
+.rating p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.genres {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #b3b3b3;
+}
+
+.genres strong {
+  color: #ffffff;
+}
+
+.summary {
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  color: #d1d1d1;
+}
+
+.summary strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.summary p {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1.25rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .cover {
+    grid-row: auto;
+    max-width: 250px;
+    justify-self: center;
+  }
+
+  .container h1 {
+    font-size: 1.75rem;
+  }
+}

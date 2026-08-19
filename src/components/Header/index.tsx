@@ -1,9 +1,14 @@
+import { Link } from 'react-router-dom'
 import styles from './Header.module.css'
+import { SiMyshows } from 'react-icons/si'
 
 export default function Header() {
     return (
-        <div className={styles.header}>
-            <h1>Mini Movies Finder</h1>
-        </div>
+        <header className={styles.header}>
+            <Link to="/" className={styles.logo}>
+                <SiMyshows />
+                <h1>Mini Series Finder</h1>
+            </Link>
+        </header>
     )
 }

@@ -1,0 +1,33 @@
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  padding: 40px 0;
+}
+
+.icon {
+  font-size: 2.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .spinner {
+    padding: 30px 0;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+}

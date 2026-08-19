@@ -1,0 +1,48 @@
+.header {
+  width: 100%;
+  padding: 20px;
+  background-color: #222;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo svg {
+  font-size: 2rem;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.logo:hover {
+  color: rgb(214, 54, 54);;
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 16px 12px;
+  }
+
+  .logo {
+    gap: 8px;
+  }
+
+  .logo svg {
+    font-size: 1.6rem;
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+}
