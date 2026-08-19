@@ -1,6 +1,6 @@
 # 🎬 Mini Series Finder
 
-Aplicação web desenvolvida em React + TypeScript para busca e consulta de informações sobre séries utilizando a API do [TVMaze](https://www.tvmaze.com/api).
+Aplicação web desenvolvida em React + TypeScript para busca e consulta de informações sobre séries utilizando a [TVMaze API](https://www.tvmaze.com/api).
 
 O projeto foi desenvolvido com o objetivo de praticar e consolidar conceitos fundamentais do React, como `useState`, `useEffect`, props, rotas, consumo de APIs, `fetch`, `async/await` e tratamento de estados de carregamento e erro.
 
@@ -9,7 +9,7 @@ O projeto foi desenvolvido com o objetivo de praticar e consolidar conceitos fun
 - 🔎 Busca de séries por nome
 - 🎬 Exibição dos resultados em cards
 - ⭐ Exibição da avaliação das séries
-- 📄 Página com detalhes da série
+- 📄 Página de detalhes da série
 - 🎭 Exibição de gêneros e sinopse
 - 🖼️ Exibição da imagem da série
 - ↩️ Navegação entre páginas
@@ -24,12 +24,10 @@ O projeto foi desenvolvido com o objetivo de praticar e consolidar conceitos fun
 - React Router DOM
 - CSS Modules
 - React Icons
-- TVMaze API
 - Vite
+- TVMaze API
 
 ## 📚 Conceitos praticados
-
-Este projeto foi desenvolvido principalmente como exercício de fixação dos seguintes conceitos:
 
 - `useState`
 - `useEffect`
@@ -44,7 +42,7 @@ Este projeto foi desenvolvido principalmente como exercício de fixação dos se
 - Promises
 - `async/await`
 - `try/catch/finally`
-- Consumo de API
+- Consumo de APIs
 - Tipagem de dados externos com TypeScript
 - Renderização de listas com `.map()`
 - Tratamento de valores `null`
@@ -58,15 +56,17 @@ Os dados das séries são obtidos através da [TVMaze API](https://www.tvmaze.co
 
 ```text
 https://api.tvmaze.com/search/shows?q={nome}
+```
 
 ### Detalhes de uma série
+
+```text
 https://api.tvmaze.com/shows/{id}
+```
 
-### Detalhes de uma série
-https://api.tvmaze.com/shows/{id}
+## 📂 Estrutura do projeto
 
-
-### 📂 Estrutura do projeto
+```text
 src/
 ├── components/
 │   ├── Footer/
@@ -93,59 +93,52 @@ src/
 │
 ├── routes.tsx
 └── main.tsx
+```
 
-### 🧭 Rotas
+## 🧭 Rotas
 
-Rota	Página
-/	Página inicial e busca de séries
-/shows/:id	Detalhes da série
-*	Página não encontrada
+| Rota | Página |
+|---|---|
+| `/` | Página inicial e busca de séries |
+| `/shows/:id` | Detalhes da série |
+| `*` | Página não encontrada |
 
-
-### ⚙️ Como executar o projeto
+## ⚙️ Como executar o projeto
 
 Clone o repositório:
 
+```bash
 git clone https://github.com/ricardohcoco/mini-series-finder
+```
 
 Entre na pasta do projeto:
 
+```bash
 cd mini-series-finder
+```
 
 Instale as dependências:
 
+```bash
 npm install
+```
 
 Execute o projeto:
 
+```bash
 npm run dev
+```
 
 A aplicação estará disponível na URL informada pelo Vite no terminal.
 
-### 🎯 Objetivo do projeto
+## 🎯 Objetivo do projeto
 
 O Mini Series Finder foi desenvolvido como um projeto de estudo para reforçar os fundamentos de desenvolvimento Front-End com React e TypeScript.
 
 A proposta foi manter a aplicação simples e objetiva, permitindo praticar o fluxo completo de uma aplicação que consome uma API:
 
-Usuário
-   ↓
-Busca por uma série
-   ↓
-React
-   ↓
-Fetch / Async Await
-   ↓
-TVMaze API
-   ↓
-Estado
-   ↓
-Lista de resultados
-   ↓
-Card da série
-   ↓
-Página de detalhes
+**Usuário → Busca → React → Fetch/Async Await → TVMaze API → Estado → Lista de resultados → Detalhes da série**
 
-### 👨‍💻 Autor
+## 👨‍💻 Autor
 
-Ricardo Coco
+**Ricardo Coco**
